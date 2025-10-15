@@ -47,26 +47,17 @@ tasks.withType(JavaCompile) {
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
-    finalizedBy("allureReport", "copyAllureReport")
 }
 
 task api_test(type: Test) {
     useJUnitPlatform {
         includeTags("api")
     }
-    finalizedBy("allureReport", "copyAllureReport")
 }
 
 task ui_test(type: Test) {
     useJUnitPlatform {
         includeTags("ui")
     }
-    finalizedBy("allureReport", "copyAllureReport")
-}
-//// копирование allure-отчета в дополнительную директорию для telegram
-tasks.register("copyAllureReport", Copy) {
-    dependsOn("allureReport")
-    from("$buildDir/reports/allure-report/allureReport")
-    into("$buildDir/allure-report")
 }
 

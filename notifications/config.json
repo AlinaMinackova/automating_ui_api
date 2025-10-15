@@ -1,17 +1,22 @@
 {
   "base": {
     "logo": "",
-    "project": "${JOB_BASE_NAME}",
+    "project": "some project",
     "environment": "qa.guru",
-    "comment": "any comment here",
-    "reportLink": "${BUILD_URL}",
+    "comment": "any comment here, @iterkin",
+    "reportLink": "https://jenkins.autotests.cloud",
     "language": "ru",
-    "allureFolder": "build/allure-report/",
+    "allureFolder": "build/reports/allure-report/allureReport",
     "enableChart": true
   },
   "telegram": {
     "token": "token",
-    "chat": "chatID",
+    "chat": "chat",
+    "replyTo": ""
+  },
+  "slack": {
+    "token": "token",
+    "chat": "#qa_guru_17",
     "replyTo": ""
   }
 }
