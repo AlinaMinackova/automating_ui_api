@@ -17,7 +17,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Spring Boot application...'
-                sh './gradlew clean build -x test'
+                sh './gradlew build -x test'
             }
         }
 
