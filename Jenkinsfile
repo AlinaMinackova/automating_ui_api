@@ -32,7 +32,7 @@ pipeline {
                 script {
                     try {
                         // Запускаем тесты по тегам
-                        sh "./gradlew clean test -Dtags=${params.TEST_TAGS}"
+                        sh "./gradlew clean ${params.TEST_TAGS}"
                     } catch (err) {
                         // Логируем ошибку, но пайплайн не прерывается
                         echo "Тесты упали, продолжаем сборку отчёта..."
