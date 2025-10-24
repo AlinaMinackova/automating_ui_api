@@ -14,6 +14,12 @@ pipeline {
             }
         }
 
+        tage('Prepare') {
+            steps {
+                sh 'chmod +x gradlew'
+            }
+        }
+
         stage('Build') {
             steps {
                 echo 'Building Spring Boot application...'
