@@ -14,7 +14,7 @@ pipeline {
             }
         }
 
-        tage('Prepare') {
+        stage('Prepare') {
             steps {
                 sh 'chmod +x gradlew'
             }
