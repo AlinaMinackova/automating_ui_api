@@ -7,7 +7,7 @@ pipeline {
 
     parameters {
         string(name: 'BRANCH', defaultValue: 'main', description: 'Branch to build')
-        string(name: 'TEST_TAGS', defaultValue: '', description: 'Test tags to run (e.g., @smoke)')
+        string(name: 'TEST_TAGS', defaultValue: 'ui_test', description: 'Test tags to run (e.g., @smoke)')
     }
 
     stages {
