@@ -23,6 +23,11 @@ public class WebTablesPage {
         return this;
     }
 
+    public String cheak() {
+        open("/webtables");
+        return $("h1.text-center").getText();
+    }
+
     public ModalAddForm openModalAddForm() {
         addNewRecordButton.click();
         return new ModalAddForm();

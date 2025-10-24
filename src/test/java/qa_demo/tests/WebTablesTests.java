@@ -14,6 +14,17 @@ public class WebTablesTests extends TestBase {
 
     @Test
     @DisplayName("Проверяем добавление записи в таблицу через модальное окно")
+    public void tablesTest2() {
+
+        String cheak = webTablesPage.cheak();
+        System.out.println(cheak);
+
+
+    }
+
+
+    @Test
+    @DisplayName("Проверяем добавление записи в таблицу через модальное окно")
     public void tablesTest() {
 
         Long sizeBefore = webTablesPage.sizeTable();
