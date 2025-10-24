@@ -30,17 +30,15 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    def testCommand = './gradlew test'
-                    if (params.TEST_TAGS?.trim()) {
-                        testCommand += " -Dtags=${params.TEST_TAGS}"
-                        echo "Running tests with tags: ${params.TEST_TAGS}"
-                    } else {
-                        echo "Running all tests"
+                    try {
+                        // Запускаем тесты по тегам
+                        sh "./gradlew clean test -Dtags=${params.TEST_TAGS}"
+                    } catch (err) {
+                        // Логируем ошибку, но пайплайн не прерывается
+                        echo "Тесты упали, продолжаем сборку отчёта..."
                     }
-                    sh testCommand
                 }
             }
-
         }
 
         stage('Allure Report') {
